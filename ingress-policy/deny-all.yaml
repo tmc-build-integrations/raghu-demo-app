@@ -2,8 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: deny-all-ingress
-  namespace: sample-app
+  namespace: '*'
 spec:
   podSelector: {}
+  ingress:
+  - from:
+    - ports:
+        - port: 443
+        - port: 80  
   policyTypes:
   - Ingress
