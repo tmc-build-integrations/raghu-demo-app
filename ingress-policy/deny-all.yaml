@@ -4,13 +4,5 @@ metadata:
   name: deny-all-ingress
 spec:
   podSelector: {}
-  ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: sample-app
-      ports:
-        - port: 443
-        - port: 80  
   policyTypes:
   - Ingress
