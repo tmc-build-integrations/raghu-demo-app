@@ -1,0 +1,13 @@
+---
+apiVersion: imgpkg.carvel.dev/v1alpha1
+images:
+- annotations:
+    kbld.carvel.dev/id: hemakshis/sample-app:1.0.0
+    kbld.carvel.dev/origins: |
+      - resolved:
+          tag: 1.0.0
+          url: hemakshis/sample-app:1.0.0
+      - preresolved:
+          url: index.docker.io/hemakshis/sample-app@sha256:deb109bc5118182851575a502ca981ffb5054166198788c2568b101b3a4fec32
+  image: index.docker.io/hemakshis/sample-app@sha256:deb109bc5118182851575a502ca981ffb5054166198788c2568b101b3a4fec32
+kind: ImagesLock

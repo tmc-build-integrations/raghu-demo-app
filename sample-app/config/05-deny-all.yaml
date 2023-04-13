@@ -2,9 +2,11 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: deny-all-ingress
+  namespace: sample-app
+  labels:
+    app: sample-app
+    enableBackup: "true"
 spec:
   podSelector: {}
-  ingress:
-  - {}
   policyTypes:
   - Ingress

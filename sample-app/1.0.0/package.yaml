@@ -1,0 +1,24 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: sample-app.demo.vmware.com.1.0.0
+spec:
+  refName: sample-app.demo.vmware.com
+  version: 1.0.0
+  releasedAt: "2023-04-07T11:14:08Z"
+  capacityRequirementsDescription: ""
+  template:
+    spec:
+      fetch:
+        - imgpkgBundle:
+            image: projects.registry.vmware.com/tmc/build-integrations/raghu-demo/sample-app@sha256:02fa23f26b418e6b25ea9456883bc013e688dd07f0429719a4367b4850b44863
+      template:
+        - ytt:
+            paths:
+              - config/
+        - kbld:
+            paths:
+              - "-"
+              - .imgpkg/images.yml
+      deploy:
+        - kapp: {}

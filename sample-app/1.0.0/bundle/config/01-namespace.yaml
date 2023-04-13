@@ -1,0 +1,6 @@
+kind: Namespace
+metadata:
+  name: sample-app
+  labels:
+    app: sample-app
+    enableBackup: "true"
