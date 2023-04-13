@@ -8,5 +8,5 @@ metadata:
     enableBackup: "true"
 spec:
   containers:
-    - image: hemakshis/sample-app:1.0.0
+    - image: hemakshis/sample-app:2.0.0
       name: sample-app
